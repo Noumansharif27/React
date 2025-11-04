@@ -206,6 +206,35 @@ import "./Product.css";
 
 There is a functionality n React named as `WebPack` which handles the `import & export` functionality, and it also enables us to import these `file.css` files.
 
+## Props (Arguments in React):
+
+By default our defned product prints the same `tittle` and `description`, as it copy the product the ammount of times we copied which is 3, and as we have `arguments` in `JS` to make our functional dynamic and use it for different purposes and gets customized output with different inputs, we have `props` in JSX which works the same as arguments in JS.
+
+```js
+function Product({ tittle, price = 1 }) {
+  return (
+    <div className="Product">
+      <h3>{tittle}</h3>
+      <p>The Price is going to be: {price}</p>
+    </div>
+  );
+}
+```
+
+```js
+function ProductList() {
+  return (
+    <>
+      <Product tittle="Tablet" price={200} />
+      <Product tittle="Mobile" price={95000} />
+      <Product tittle="Laptop" />
+    </>
+  );
+}
+```
+
+Now you can see that while calling the `Product component` we give it some arguments which in result gives us different output from eachothers.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -222,3 +251,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+```
+
+```
