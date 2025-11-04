@@ -190,6 +190,22 @@ function Table() {
 
 If we are making a single card we can defined its structure inside a `Card.jsx` file and then export it to the `App.jsx` file for use, and if we want to dublicate this card structure multiple times instead of copy and pasting the card calling component we have to create another file name something like `CardLists.jsx` and there we would first export our card from card.jsx file then multiple it and after that export the `CardLists` function and then use it inside the `App.jsx` once and although the output would be the same but it would be more convinent and it is recommended.
 
+## Styling:
+
+To apply styling to our component we have to import the css file and `for every component file we create seprate css file with the same name`.
+
+`e.g.`
+
+for `Product.jsx` file we created `Product.css` file for styling.
+
+To import a css file we only use the following command:
+
+```js
+import "./Product.css";
+```
+
+There is a functionality n React named as `WebPack` which handles the `import & export` functionality, and it also enables us to import these `file.css` files.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
