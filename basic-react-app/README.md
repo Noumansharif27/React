@@ -149,6 +149,47 @@ import { Tittle } from "./Tittle.jsx";
   );
   ```
 
+## React Fragment:
+
+React fragment lets you group a list fo children without addg an extra node to the DOM.
+
+`When we wrap multiple child components into a parent one it create an extra element in our HTML file.`
+
+by using react fragment we can skip that element.
+
+`e.g.`
+
+```js
+function App() {
+  return (
+    <>
+      <Component></Component> // 1st way to call a component.
+      <Component /> // 2nd way to call a component.
+    </>
+  );
+}
+```
+
+We did not make some huge changes to our code, we just put blank brackets which works just like parent element but it does not make an extra node element inside our DOM.
+
+## JSX with curly Braces:
+
+When we wants to use pure JS in React we can use `{}` `curly braces`, cause code inside these braces are treated as pure JS code in JSX format.
+
+`e.g.`
+
+```js
+function Table() {
+  return <h2>2 * 2 = {2 * 2}</h2>;
+}
+```
+
+**output :** `2 * 2 = 4`
+
+## Structorng component:
+
+If we are making a single card we can defined its structure inside a `Card.jsx` file and then export it to the `App.jsx` file for use, and if we want to dublicate this card structure multiple times instead of copy and pasting the card calling component we have to create another file name something like `CardLists.jsx` and there we would first export our card from card.jsx file then multiple it and after that export the `CardLists` function and then use it inside the `App.jsx` once and although the output would be the same but it would be more convinent and it is recommended.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
