@@ -1,9 +1,5 @@
 import "./App.css";
-
-// Creating our 1st component
-function Tittle() {
-  return <h1>I am the Tittle!</h1>;
-}
+import { Tittle } from "./Tittle.jsx";
 
 function Description() {
   return <p>I am the Description!</p>;

@@ -98,6 +98,36 @@ In `React` every indevidual component have its own file, e.g. `Tittle` compoent 
 
 Now that you’ve declared MyButton, you can nest it into another component.
 
+## Import & export:
+
+`Import` to use a compoent defined in a seprate file, we have to import it from its file into the one in which it it going to be used.
+
+```js
+import Tittle from "./Tittle.jsx";
+```
+
+It simply import the compoent in the document.
+
+`export` to import a component we have to first export it inside the document.
+
+```js
+export default Tittle;
+```
+
+using this default export we can be able to import the component with a custom name, or with the same name if we wants, but we can only export only one component with it.
+
+```js
+export { Tittle };
+```
+
+Using this method we can export as many component we want but we have to be carefull as to use the coponent in another file they have to be import with the same name and inside the same parenthesis.
+
+`e.g.`
+
+```js
+import { Tittle } from "./Tittle.jsx";
+```
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
