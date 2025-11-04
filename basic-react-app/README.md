@@ -58,6 +58,8 @@ function Description() {
 
 The following expression will always gives us an error because we cannot render 2 parent element in an expression, in case we have to render more the one element then we have to wrap them in one parent element and then return them, which will enables us to achieve what we want to do.
 
+<a id="writing-markup-example"></a>
+
 ```js
 function Description() {
   return (
@@ -127,6 +129,25 @@ Using this method we can export as many component we want but we have to be care
 ```js
 import { Tittle } from "./Tittle.jsx";
 ```
+
+## Writing markup in JSX:
+
+- Return a sigle root element, [Jump to the example](#writing-markup)
+- Close all tags:
+  - we have to make sure that all of our tags are perfectly closed with their closing tags.
+- camelCase most of the thing.
+
+  - In JSX we mostly use camel text for many thing like to assign a class to a perticular element we have to write it like
+
+  ```js
+  function App(
+  return (
+    <div className="div">
+      <button>It is a button!</button>
+    </div>
+  )
+  );
+  ```
 
 # React + Vite
 
