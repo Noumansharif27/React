@@ -235,6 +235,32 @@ function ProductList() {
 
 Now you can see that while calling the `Product component` we give it some arguments which in result gives us different output from eachothers.
 
+## Defining Array in JSX
+
+```js
+function ProductList() {
+  let options = ["Hight", "wall"];
+  let options1 = { a: "wooow", b: "muuuuuuuuuu" };
+
+  return (
+    <>
+      <Product
+        tittle="Tablet"
+        price={200}
+        features={options}
+        features1={options1}
+      />
+      <Product tittle="Mobile" price={95000} />
+      <Product tittle="Laptop" />
+    </>
+  );
+}
+```
+
+remember to define tha array before using the return keyword.
+
+## Rendering an Array:
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -252,6 +278,9 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
+````
+
 ```
 
 ```
+````
