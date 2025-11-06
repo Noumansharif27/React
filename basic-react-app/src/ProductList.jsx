@@ -9,11 +9,11 @@ function ProductList() {
       <Product
         tittle="Tablet"
         price={200}
-        features={{ a: "hi-tech", b: "durable", c: "fast" }}
+        // features={{ a: "hi-tech", b: "durable", c: "fast" }}
         // features2={options2}
       />
-      {/* <Product tittle="Mobile" price={95000} />
-      <Product tittle="Laptop" /> */}
+      <Product tittle="Mobile" price={95000} />
+      <Product tittle="Laptop" price={2999} />
     </>
   );
 }
