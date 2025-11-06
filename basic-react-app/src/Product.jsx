@@ -1,7 +1,8 @@
 import "./Product.css";
 
 function Product({ tittle, price, features }) {
-  let list = features.map((feature) => <li>{feature}</li>);
+  const list = features.map((feature) => <li>{feature}</li>);
+
   return (
     <div className="Product">
       <h3>{tittle}</h3>

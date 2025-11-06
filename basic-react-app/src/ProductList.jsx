@@ -1,12 +1,16 @@
 import Product from "./Product";
 
 function ProductList() {
-  let options = ["Hight", "wall", "Hamu"];
+  // let options = [<li>"Hight"</li>, <li>"wall"</li>, <li>"Hamu"</li>];
   // let options2 = { a: "hi-tech", b: "durable", c: "fast" };
 
   return (
     <>
-      <Product tittle="Tablet" price={200} features={options} />
+      <Product
+        tittle="Tablet"
+        price={200}
+        features={{ a: "hi-tech", b: "durable", c: "fast" }}
+      />
       <Product tittle="Mobile" price={95000} />
       <Product tittle="Laptop" />
     </>

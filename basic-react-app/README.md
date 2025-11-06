@@ -149,118 +149,6 @@ import { Tittle } from "./Tittle.jsx";
   );
   ```
 
-## React Fragment:
-
-React fragment lets you group a list fo children without addg an extra node to the DOM.
-
-`When we wrap multiple child components into a parent one it create an extra element in our HTML file.`
-
-by using react fragment we can skip that element.
-
-`e.g.`
-
-```js
-function App() {
-  return (
-    <>
-      <Component></Component> // 1st way to call a component.
-      <Component /> // 2nd way to call a component.
-    </>
-  );
-}
-```
-
-We did not make some huge changes to our code, we just put blank brackets which works just like parent element but it does not make an extra node element inside our DOM.
-
-## JSX with curly Braces:
-
-When we wants to use pure JS in React we can use `{}` `curly braces`, cause code inside these braces are treated as pure JS code in JSX format.
-
-`e.g.`
-
-```js
-function Table() {
-  return <h2>2 * 2 = {2 * 2}</h2>;
-}
-```
-
-**output :** `2 * 2 = 4`
-
-## Structorng component:
-
-If we are making a single card we can defined its structure inside a `Card.jsx` file and then export it to the `App.jsx` file for use, and if we want to dublicate this card structure multiple times instead of copy and pasting the card calling component we have to create another file name something like `CardLists.jsx` and there we would first export our card from card.jsx file then multiple it and after that export the `CardLists` function and then use it inside the `App.jsx` once and although the output would be the same but it would be more convinent and it is recommended.
-
-## Styling:
-
-To apply styling to our component we have to import the css file and `for every component file we create seprate css file with the same name`.
-
-`e.g.`
-
-for `Product.jsx` file we created `Product.css` file for styling.
-
-To import a css file we only use the following command:
-
-```js
-import "./Product.css";
-```
-
-There is a functionality n React named as `WebPack` which handles the `import & export` functionality, and it also enables us to import these `file.css` files.
-
-## Props (Arguments in React):
-
-By default our defned product prints the same `tittle` and `description`, as it copy the product the ammount of times we copied which is 3, and as we have `arguments` in `JS` to make our functional dynamic and use it for different purposes and gets customized output with different inputs, we have `props` in JSX which works the same as arguments in JS.
-
-```js
-function Product({ tittle, price = 1 }) {
-  return (
-    <div className="Product">
-      <h3>{tittle}</h3>
-      <p>The Price is going to be: {price}</p>
-    </div>
-  );
-}
-```
-
-```js
-function ProductList() {
-  return (
-    <>
-      <Product tittle="Tablet" price={200} />
-      <Product tittle="Mobile" price={95000} />
-      <Product tittle="Laptop" />
-    </>
-  );
-}
-```
-
-Now you can see that while calling the `Product component` we give it some arguments which in result gives us different output from eachothers.
-
-## Defining Array in JSX
-
-```js
-function ProductList() {
-  let options = ["Hight", "wall"];
-  let options1 = { a: "wooow", b: "muuuuuuuuuu" };
-
-  return (
-    <>
-      <Product
-        tittle="Tablet"
-        price={200}
-        features={options}
-        features1={options1}
-      />
-      <Product tittle="Mobile" price={95000} />
-      <Product tittle="Laptop" />
-    </>
-  );
-}
-```
-
-remember to define tha array before using the return keyword.
-
-## Rendering an Array:
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -277,6 +165,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+t-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
 ````
 
