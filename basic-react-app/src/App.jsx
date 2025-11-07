@@ -1,5 +1,5 @@
 import "./App.css";
-import { Tittle, Table } from "./Tittle.jsx";
+// import { Tittle, Table } from "./Tittle.jsx";
 import ProductList from "./ProductList.jsx";
 // import MsgBox from "./MsgBox.jsx";
 
@@ -8,11 +8,18 @@ function Description() {
 }
 
 function App() {
+  let productParentStyle = {
+    display: "flex",
+    justifyContent: "center",
+    gap: "2rem",
+  };
   return (
-    <>
-      {/* <MsgBox userName="Nouman" colorName="purple" /> */}
+    <div className="product-parent" style={productParentStyle}>
       <ProductList />
-    </>
+      <ProductList />
+      <ProductList />
+      <ProductList />
+    </div>
   );
 }
 
