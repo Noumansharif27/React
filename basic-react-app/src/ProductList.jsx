@@ -19,9 +19,13 @@ import Product from "./Product";
 // }
 
 function ProductList() {
+  // let tittle = [, , , ,];
   return (
     <>
-      <Product />
+      <Product tittle="Logitech MX Master 3S" idx={0} />
+      <Product tittle="Apple Pencil (2nd Gen)" idx={1} />
+      <Product tittle="Zebronic Zeb-Transformer" idx={2} />
+      <Product tittle="Portronics Toad 23 Wireless Mouse" idx={3} />
     </>
   );
 }

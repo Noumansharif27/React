@@ -12,14 +12,15 @@ function App() {
     display: "flex",
     justifyContent: "center",
     gap: "2rem",
+    flexWrap: "wrap",
   };
   return (
-    <div className="product-parent" style={productParentStyle}>
-      <ProductList />
-      <ProductList />
-      <ProductList />
-      <ProductList />
-    </div>
+    <>
+      <h2>Blogbuster Deals On Computer Accessories | Shop Now</h2>
+      <div className="product-parent" style={productParentStyle}>
+        <ProductList />
+      </div>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import "./Product.css";
+import Price from "./Price";
 
 // function Product({ tittle, price }) {
 //   // const list = featurese.map((feature) => <li>{feature}</li>);
@@ -16,16 +17,31 @@ import "./Product.css";
 //   );
 // }
 
-function Product() {
+function Product({ tittle, idx }) {
   let productStyle = {
-    width: "200px",
-    height: "150px",
+    width: "350px",
+    height: "200px",
+    padding: "0",
   };
+
+  let oldPrices = ["12,495", "11,900", "1,599", "599"];
+  let newPrices = ["8,999", "91,99", "899", "278"];
+
+  let description = [
+    ["800 DPI", "Design for Ipad Pro"],
+    ["Design for Ipada pro", "800 DPI"],
+    ["Intutive Surface", "Wireless"],
+    ["Wireless", "Intutive Surface"],
+  ];
+  // let newPrices = ["8,999", "91,99", "899", "278"];
+
   return (
     <div className="Product" style={productStyle}>
-      <h3>Tittle</h3>
-      <p>Description</p>
-      <p>Price</p>
+      <h3>{tittle}</h3>
+      <p>{description[idx][0]}</p>
+      <p>{description[idx][1]}</p>
+
+      <Price oldPrice={oldPrices[idx]} newPrice={newPrices[idx]} />
     </div>
   );
 }
