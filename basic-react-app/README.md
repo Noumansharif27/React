@@ -149,14 +149,39 @@ import { Tittle } from "./Tittle.jsx";
   );
   ```
 
-  ## Conditions in React:
+## Conditions in React:
 
-  ```js
-  {
-    price > 3000 ? <p>Discount 5%</p> : null;
-  }
-  ```
+As we have conditions in `JS` we can also use them in JSX
 
+```js
+{
+  price > 3000 ? <p>Discount 5%</p> : null;
+}
+```
+
+
+
+## Event Object:
+
+In event function we have an event object which contain so much data and methods.
+
+```js
+function handleFormSubmition(event) {
+  event.preventDefault();
+  console.log("Form Submited successfully!");
+  console.log(event);
+}
+
+function Form() {
+  return (
+    <form>
+      <input placeholder="write something" />
+      <button onClick={handleFormSubmition}>Submit</button>
+    </form>
+  );
+}
+
+export default Form;
 ```
 
 # React + Vite
@@ -176,6 +201,8 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 t-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+```
 
 ```
 
