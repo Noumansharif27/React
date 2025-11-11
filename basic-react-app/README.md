@@ -250,7 +250,7 @@ export default function Counter() {
 }
 ```
 
-we have to first import it from react before use, and it always return us an array that consist of 2 values `[theVariableInitaialValue, setFunction]` we always defined the function name based on the initial value variable name.
+we have to first import it from react before use, and it always return us an array that consist of 2 values `[theVariableInitaialValue, setFunction]` we always defined the function name based on the initial value variable name. the `set` function is also known as `updater function`.
 
 `e.g.`
 
@@ -338,6 +338,57 @@ function outerFunction() {
   return innerFunction;
 }
 ```
+
+## Re-Rendering:
+
+when we re-render a code or an element the entire code gets re-render not just the perticular element or a component, that why when we rendered the counter out page show 1 but our console prints 0 and one the second go the page prints 2 but the console prints 1, because we can only access a variable or change after the page gets re render.
+
+## Call-backs in Updater:
+
+guess the output of the following function.
+
+```js
+import { useState } from "react";
+import LikeButton from "./LikeButton";
+
+export default function Counter() {
+  let [count, setCount] = useState(0);
+
+  function incCount() {
+    setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h3>Count = {count}</h3>
+      <button onClick={incCount}>Increase Count</button>
+      <LikeButton />
+    </div>
+  );
+}
+```
+
+by sense of the we can say that whenever we click on the `increase button` the counter amount of its variable should change with the increment of `+3`, but the twist here is that it only changes to 1.
+
+- why is that? It is because, the updater function is an `asyncronous` function and it only updated the value once the button clicks so it only add 1 once the button click and then 1 again on the second click.
+- To solve this we use callBacks in it as we use in other `async` functions.
+
+```js
+setCount((currCount) => {
+  return currCount + 1;
+});
+
+setCount((currCount) => {
+  return currCount + 1;
+});
+```
+
+istead of using the static count we can use the callback one which will allows us to increment 2 on every time we clicks on the button.
+
+- We use the call back when the new value depends on the current or an old value.
+- we use static when we just use random values on every click.
 
 # React + Vite
 
