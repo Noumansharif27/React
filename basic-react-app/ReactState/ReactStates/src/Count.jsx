@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LikeButton from "./LikeButton";
 
 export default function Counter() {
   let [count, setCount] = useState(0);
@@ -12,6 +13,7 @@ export default function Counter() {
     <div>
       <h3>Count = {count}</h3>
       <button onClick={incCount}>Increase Count</button>
+      <LikeButton />
     </div>
   );
 }
