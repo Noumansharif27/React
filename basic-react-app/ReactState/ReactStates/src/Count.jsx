@@ -4,10 +4,19 @@ import LikeButton from "./LikeButton";
 export default function Counter() {
   let [count, setCount] = useState(0);
 
-  function incCount() {
-    setCount(count + 1);
-    console.log(count);
-  }
+  let incCount = () => {
+    setCount((currCount) => {
+      return currCount + 1;
+    });
+
+    setCount((currCount) => {
+      return currCount + 1;
+    });
+
+    // console.log(count);
+    // setCount(count + 1);
+    // setCount(count + 1);
+  };
 
   return (
     <div>
