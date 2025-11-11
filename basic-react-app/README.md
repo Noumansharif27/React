@@ -159,8 +159,6 @@ As we have conditions in `JS` we can also use them in JSX
 }
 ```
 
-
-
 ## Event Object:
 
 In event function we have an event object which contain so much data and methods.
@@ -182,6 +180,163 @@ function Form() {
 }
 
 export default Form;
+```
+
+## States:
+
+In react a state of an elements changes based on the user interaction, but by default it has no affect on the UI, we have to define it manually.
+
+```js
+export default function Counter() {
+  let count = 0;
+
+  function InCount() {
+    count += 1;
+    console.log(count);
+  }
+
+  return (
+    <div>
+      <h3>Count = {count}</h3>
+      <button onClick={InCount}>Increase Count</button>
+    </div>
+  );
+}
+```
+
+```js
+import "./App.css";
+import Counter from "./Count.jsx";
+
+function App() {
+  return (
+    <>
+      <h1>States in React</h1>
+      <Counter />
+    </>
+  );
+}
+
+export default App;
+```
+
+IN the above code we had maked a counter variable which increses based on the user clicks on the button bellow it, it works the counter changes from 0 to 1 and so, but the counter = 0, so we have to change its states maually.
+
+## Hooks:
+
+Hooks were a new addition in React 16.8
+
+they let you use state and other react features without writting a class.
+
+`In starting we use to defined every functionality and even states of an object in class, but hooks enables us to use all of these without a need of class.`
+
+## useState():
+
+This function is used to reRender an element when its states get changes.
+
+```js
+import { useState } from "react";
+
+export default function Counter() {
+  let arr = useState(0); // useState(initialVale)
+  console.log(arr);
+
+  return (
+    <div>
+      <h3>Count = {0}</h3>
+      <button>Increase Count</button>
+    </div>
+  );
+}
+```
+
+we have to first import it from react before use, and it always return us an array that consist of 2 values `[theVariableInitaialValue, setFunction]` we always defined the function name based on the initial value variable name.
+
+`e.g.`
+
+```js
+let [count, setCount] = usestate(0);
+```
+
+we always decode the array before using it.
+
+```js
+import { useState } from "react";
+
+export default function Counter() {
+  let [count, setCount] = useState(0);
+
+  function incCount() {
+    setCount(count + 1);
+    console.log(count);
+  }
+
+  return (
+    <div>
+      <h3>Count = {count}</h3>
+      <button onClick={incCount}>Increase Count</button>
+    </div>
+  );
+}
+```
+
+In the above code we reRender the count value once it gets changes, we not usually use the `setFunction: setCount` like that but for now we just use it.
+
+and in the render fuctionality out render value and console.log value has difference like in our case our counter get 1 after its first clicks but the console.log value of count get 0 and on the secound click it gets 1 and in render it gets 2.
+
+## Activity:
+
+```js
+import { useState } from "react";
+
+export default function LikeButton() {
+  let [isLiked, setisLiked] = useState("flase");
+
+  function IsClicked() {
+    setisLiked(!isLiked);
+    console.log(isLiked);
+  }
+
+  let likedStyle = {
+    color: "red",
+  };
+
+  return (
+    <>
+      <p onClick={IsClicked}>
+        {isLiked ? ( // if true then render the regular heart
+          <i class="fa-regular fa-heart"></i>
+        ) : (
+          <i class="fa-solid fa-heart" style={likedStyle}></i> // if false the render the filled heart
+        )}
+      </p>
+    </>
+  );
+}
+```
+
+In the above code we implementing a like button which changes based on the user click.
+
+‼ A state variable can only be written inside the component, if it is outside your code would gets errors.
+
+## Closure:
+
+Closure is a feature in JS where an inner function has access to the outer(enclosing) function's variables.
+
+‼ In JS when a function completes its execution, any variable that were defined inside the function scope ease to exists.
+
+as we know the concept that variables defined in a function, get erased once after the function did its work, but in a closure consept that enables us that even after the execution of a father function , the inner function still has access to the outer function's variables.
+
+```js
+function outerFunction() {
+  var x = 10;
+  return function innerFunction() {
+    // Inner function has access to x from the outer function
+    var y = 20;
+    console.log(x + y);
+  };
+  return innerFunction;
+}
 ```
 
 # React + Vite
