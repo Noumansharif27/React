@@ -531,3 +531,16 @@ In our normal logic this code should've worked but it did'nt, we gets the consol
 **Why?** The reason is because when we change the value of `blue` it gets changed inside the actual object and we know about the `refrencing` inside `memory`, when an object is stored inside the memory we only gets its refrencing value which points to the exact memory location of each object's element. so now when we increase the object's element value, `Reacy` dose not finds any changes in the object and it doesnot `re-render` the object, to solve this we always use `...` `(spreat Oprator)` to uupdate the value of object, because it generate a new copy of updated object and that's how react `tract` the changes inside the object and we gets our component re-rendered.
 
 `‼ Same logic goes for arrays`
+
+`e.g.`:
+
+```js
+let updateBlue = () => {
+  console.log(`moves.blue = ${moves.blue}`);
+  setMoves((preMoves) => {
+    return { ...preMoves, blue: preMoves.blue + 1 };
+  });
+};
+```
+
+This way our code will re-render the object element once its value gets changed.
