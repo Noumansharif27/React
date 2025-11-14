@@ -6,12 +6,18 @@ export default function Todo() {
   let [newTodo, setNewTodo] = useState([""]);
 
   let addNewTodo = () => {
-    setTodos([...todos, { task: newTodo, id: uuidv4() }]);
+    setTodos((prevTodo) => {
+      return [...prevTodo, { task: newTodo, id: uuidv4() }];
+    });
     setNewTodo([""]);
   };
 
   let updateNewTodo = (event) => {
     setNewTodo(event.target.value);
+  };
+
+  let deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id != id));
   };
 
   return (
@@ -30,7 +36,16 @@ export default function Todo() {
       <br />
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.task}</li>
+          <li key={todo.id}>
+            <span>{todo.task}</span>
+            <button
+              onClick={() => {
+                deleteTodo(todo.id);
+              }}
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </>
