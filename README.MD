@@ -544,3 +544,52 @@ let updateBlue = () => {
 ```
 
 This way our code will re-render the object element once its value gets changed.
+
+## New TodoApp:
+
+```js
+import { useState } from "react";
+
+export default function Todo() {
+  let [todos, setTodos] = useState(["sample task"]);
+  let [newTodo, setNewTodo] = useState([""]);
+
+  let addNewTodo = () => {
+    setTodos([...todos, newTodo]);
+    setNewTodo([""]);
+  };
+
+  let updateNewTodo = (event) => {
+    setNewTodo(event.target.value);
+  };
+
+  return (
+    <>
+      <h1>Todo App</h1>
+      <br />
+      <br />
+      <input type="text" value={newTodo} onChange={updateNewTodo} />
+      <button
+        style={{ display: "block", margin: "1rem auto 0" }}
+        onClick={addNewTodo}
+      >
+        Add Todo
+      </button>
+      <br />
+      <br />
+      <ul>
+        {todos.map((todo) => (
+          <li>{todo}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+```
+
+The goal is to create an app that track what user had typed into the input and then we will be updating their todo task once they press the submit button.
+
+**Structure** we have to create two variables one to track the user input and one to hold all of their tasks, so we created `todos` `array` to store all the todo tasks and one `newTodo` to store the currenntly input task.
+
+then in our `addNewTodo` we find the user input task with the help of `event` object, we also have to put `newTodo` as a value for the input. then in our `addTodo` we update our `todos` list by adding our new inputed todo.
+and at the end we printed out our todos array with using `map` function.
