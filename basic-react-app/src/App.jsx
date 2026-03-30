@@ -1,8 +1,12 @@
 import "./App.css";
-import Form from "./Form.jsx";
+// import Form from "./Form.jsx";
+import Product from "./Product.jsx"
 
 function App() {
-  return <Form />;
+  return
+    // <Form />
+    <Product />
+  ;
 }
 
 export default App;
