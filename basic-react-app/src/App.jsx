@@ -1,11 +1,13 @@
 import "./App.css";
 import Product from "./Product.jsx";
+import Activity from "./Activity.jsx";
 
 function App() {
-  let options = ["high-tech", "Durable", "Reliable"];
+  // let options = ["high-tech", "Durable", "Reliable"];
   return (
     <>
-      <Product tittle="Phone" price={20000} features={options} />
+      <Activity name="Nouman" color="Blue" />
+      {/* <Product tittle="Phone" price={20000} features={options} /> */}
       {/* <Product tittle="Laptop" price={10000} />
     <Product tittle={"Pen"} price={10} /> */}
     </>
