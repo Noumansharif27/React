@@ -1,15 +1,15 @@
 import "./App.css";
-import Product from "./Product.jsx"
+import Product from "./Product.jsx";
 
 function App() {
+  let options = ["high-tech", "Durable", "Reliable"];
   return (
     <>
-    <Product />
-    <Product />
-    <Product />
+      <Product tittle="Phone" price={20000} features={options} />
+      {/* <Product tittle="Laptop" price={10000} />
+    <Product tittle={"Pen"} price={10} /> */}
     </>
-
-  )
+  );
 }
 
 export default App;
