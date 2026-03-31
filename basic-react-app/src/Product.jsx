@@ -3,10 +3,12 @@ import "./Product.css"
 
 function Product() {
     return (
-        <div className="Product">
+        <>
+         <div className="Product">
             <h3>Product List.</h3>
             <h5>Product Description.</h5>
         </div>
+        </>
     );
 }
 
