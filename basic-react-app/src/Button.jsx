@@ -1,15 +1,16 @@
-export default function Button() {
-  let printHello = () => {
-    console.log("hello world!");
-  };
+function printHello() {
+  console.log("Print Hello!");
+}
 
-  let printBye = () => {
-    console.log("bye world!");
-  };
+function printBye() {
+  console.log("Bye!");
+}
+
+export function Button() {
   return (
     <>
       <button onClick={printHello}>Click me!</button>
-      <p onClick={printBye}>click on this paragraph</p>
+      <p onClick={printBye}>This Parah is for event Demo!</p>
     </>
   );
 }

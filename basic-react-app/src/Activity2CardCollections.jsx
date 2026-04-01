@@ -6,21 +6,18 @@ export function Activity2CardCollections() {
     <div className="cardCollection">
       <Activity2
         tittle="Logitech MS Master 3S"
-        image="../assets/react.svg"
         description={["with new featres", "more buttons for more features"]}
         oldPrice={1000}
         newPrice={800}
       />
       <Activity2
         tittle="Logitech MS Master 3S"
-        image="../assets/react.svg"
         description={["with new featres", "more buttons for more features"]}
         oldPrice={1000}
         newPrice={800}
       />
       <Activity2
         tittle="Logitech MS Master 3S"
-        image="../assets/react.svg"
         description={["with new featres", "more buttons for more features"]}
         oldPrice={1000}
         newPrice={800}

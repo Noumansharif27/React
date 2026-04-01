@@ -1,13 +1,15 @@
 import "./App.css";
 // import Product from "./Product.jsx";
 // import Activity from "./Activity.jsx";
-import { Activity2CardCollections } from "./Activity2CardCollections.jsx";
+// import { Activity2CardCollections } from "./Activity2CardCollections.jsx";
+import { Button } from "./Button";
 
 function App() {
   // let options = ["high-tech", "Durable", "Reliable"];
   return (
     <>
-      <Activity2CardCollections />
+      <Button />
+      {/* <Activity2CardCollections /> */}
       {/* <Activity userName="Nouman" textColor="Blue" /> */}
       {/* <Product tittle="Phone" price={20000} features={options} /> */}
       {/* <Product tittle="Laptop" price={10000} />
