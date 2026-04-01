@@ -1,10 +1,10 @@
 import React from "react";
 
-function Activity({ name, color }) {
-  let style = { color: color };
+function Activity({ userName, textColor }) {
+  let style = { color: textColor };
   return (
     <>
-      <h3 style={style}>Hello {name}</h3>
+      <h3 style={style}>Hello {userName}</h3>
     </>
   );
 }
